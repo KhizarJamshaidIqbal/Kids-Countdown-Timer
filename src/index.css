@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations and styles for the countdown timer */
+@keyframes tapEffect {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes backgroundEffect {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) translateY(-20px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2) translateY(-40px);
+    opacity: 0;
+  }
+}
+
+@keyframes bounceAcross {
+  0%, 100% {
+    transform: translateX(0) translateY(-50%);
+  }
+  50% {
+    transform: translateX(300px) translateY(-80px);
+  }
+}
+
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-40px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes levelUp {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.tap-area {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tap-area:active {
+  transform: scale(0.98);
+}
+
+.tap-area:hover {
+  filter: brightness(1.1);
+}
+
+.shake-effect {
+  animation: shake 0.5s ease-in-out;
+}
+
+.level-up {
+  animation: levelUp 1s ease-in-out;
+}
+
+.stars-pattern {
+  background-image: radial-gradient(circle at 20% 50%, white 2px, transparent 2px),
+                    radial-gradient(circle at 40% 80%, white 1px, transparent 1px),
+                    radial-gradient(circle at 90% 10%, white 1px, transparent 1px);
+  background-size: 50px 50px, 30px 30px, 70px 70px;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
